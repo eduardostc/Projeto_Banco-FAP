@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import FuncionarioAPIView
+from .views import FuncionarioAPIView, FuncionariosAPIView, CreateFuncionarioAPIView
 
 urlpatterns = [
-    path('funcionarios/', FuncionarioAPIView.as_view(), name='funcionarios'),
+    path('funcionario/<int:pk>', FuncionarioAPIView.as_view(), name='funcionario'),
+    path('funcionarios/', FuncionariosAPIView.as_view(), name='funcionarios'),
+    path('create/', CreateFuncionarioAPIView.as_view(), name='create'),
+
 ]
